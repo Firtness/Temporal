@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetify App</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #65b37c, #417721);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Container Styling */
+        .container {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        p {
+            font-size: 1em;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Button Styling */
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 16px;
+            color: #fff;
+            background: linear-gradient(135deg, #91ff00, #00b318);
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 8px 15px rgba(0, 123, 255, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .button:hover {
+            background: linear-gradient(135deg, #00b300, #00801c);
+            box-shadow: 0 12px 20px rgba(0, 87, 179, 0.5);
+            transform: translateY(-3px);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenidos a Recetify!</h1>
+        <p>Explora nuestra plataforma y descubre información relevante de los usuarios registrados.</p>
+        <a href="/all-users" class="button">Ver Usuarios</a>
+    </div>
+</body>
+</html>
