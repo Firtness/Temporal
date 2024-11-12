@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path"); // Asegúrate de importar el módulo 'path'
-
+//Hola
 const app = express();
 
 require("./database");
