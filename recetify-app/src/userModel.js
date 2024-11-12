@@ -3,9 +3,10 @@ const mongoose = require("mongoose")
 //Creamos el esquema de DB
 const userSchema=new mongoose.Schema(
     {
-        name:{type: String},
+        username:{type: String},
         email: {type: String},
-        password: {type: String}
+        password: {type: String},
+        description: {type: String}
     },
     {
         timestamp: true,
