@@ -1,7 +1,14 @@
 const express = require("express");
+
+const cors = require('cors');
+
 const path = require("path"); // Asegúrate de importar el módulo 'path'
 //Hola
 const app = express();
+
+app.use(cors({
+    origin: 'http://localhost:5173'
+}));
 
 require("./database");
 
@@ -29,6 +36,8 @@ app.use(require("./shopping_cartModel"));
 app.use(require("./user_recipeModel"));
 
 
+
 app.listen(3000, () => {
     console.log("Server on port", 3000);
 });
+

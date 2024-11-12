@@ -10,7 +10,7 @@ router.get("/users", (req, res) => {
 });
 
 // CRUD - CREAR
-router.post("/users", async (req, res) => {
+router.post("/user", async (req, res) => {
     try {
         const body = req.body;
         const respuesta = await ModelUser.create(body);
