@@ -12,12 +12,23 @@ router.get("/comments", (req, res) => {
 router.post("/comments", async (req, res) => {
     try {
         const body = req.body;
+        
+        // Registro del cuerpo de la solicitud para verificar el contenido
+        console.log("Request body:", body);
+        
+        // Creación del comentario en la base de datos
         const respuesta = await ModelComment.create(body);
+        
+        // Registro de la respuesta para verificar el objeto devuelto
+        console.log("Comment created:", respuesta);
+        
         res.send(respuesta);
     } catch (error) {
-        res.status(500).send(error);
+        console.error("Error creating comment:", error); // <-- Log de error detallado
+        res.status(500).send({ message: "Error creating comment", error });
     }
 });
+
 
 // CRUD - LISTAR
 router.get("/all-comments", async (req, res) => {

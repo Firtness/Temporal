@@ -40,6 +40,17 @@ router.get("/publications/:id", async (req, res) => {
     }
 });
 
+// CRUD - LISTAR PUBLICACIONES DE UN USUARIO
+router.get("/publications/user/:id", async (req, res) => {
+    try {
+        const id = req.params.id;
+        const respuesta = await ModelPublication.find({ user_id: id });
+        res.send(respuesta);
+    } catch (error) {
+        res.status(500).send
+    }
+});
+
 // CRUD - Actualizar (Put)
 router.put("/publications/:id", async (req, res) => {
     try {

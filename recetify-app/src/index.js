@@ -6,6 +6,7 @@ const path = require("path"); // Asegúrate de importar el módulo 'path'
 //Hola
 const app = express();
 
+//CAMBIAR ESTO PARA QUE FUNCIONE EN EL FRONTEND
 app.use(cors({
     origin: 'http://localhost:5173'
 }));
