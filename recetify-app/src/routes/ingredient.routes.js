@@ -63,4 +63,14 @@ router.delete("/ingredients/:id", async (req, res) => {
     }
 });
 
+router.get('/ingredients', async (req, res) => {
+    try {
+        const products = await Product.find({});
+        res.send(products);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
+
 module.exports = router;
