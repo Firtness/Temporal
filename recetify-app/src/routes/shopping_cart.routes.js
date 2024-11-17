@@ -98,6 +98,7 @@ router.get("/shopping-carts/user/:user_id", async (req, res) => {
     }
 });
 
+//CHECKOUTt
 router.post("/checkout", async (req, res) => {
   try {
       const { user_id, items, total_price } = req.body;
