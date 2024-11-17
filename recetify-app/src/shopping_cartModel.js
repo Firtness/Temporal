@@ -4,7 +4,9 @@ const itemSchema = new mongoose.Schema({
     product_id: { type: String, required: true },
     quantity: { type: Number, required: true },
     price: { type: Number, required: true },
-    total: { type: Number, required: true }
+    total: { type: Number, required: true },
+    photo_url: { type: String, required: true } 
+
 });
 
 const shoppingCartSchema = new mongoose.Schema({
