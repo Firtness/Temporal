@@ -76,16 +76,28 @@ router.put("/shopping-carts/:id", async (req, res) => {
     }
 });
 
+// Eliminar un producto del carrito y actualizar el total
 router.delete("/shopping-carts/user/:userId/product/:productId", async (req, res) => {
     try {
         const { userId, productId } = req.params;
-        const respuesta = await ModelShoppingCart.updateOne(
+
+        // Eliminar el producto del carrito
+        await ModelShoppingCart.updateOne(
             { user_id: userId },
             { $pull: { items: { product_id: productId } } }
         );
-        res.send(respuesta);
+
+        // Recalcular el total del carrito
+        const cart = await ModelShoppingCart.findOne({ user_id: userId });
+        const totalPrice = cart.items.reduce((total, item) => total + item.price * item.quantity, 0);
+
+        // Actualizar el total en la base de datos
+        cart.total_price = totalPrice;
+        await cart.save();
+
+        res.status(200).json({ message: 'Producto eliminado y total actualizado', cart });
     } catch (error) {
-        res.status(500).send(error);
+        res.status(500).json({ message: 'Error al eliminar el producto del carrito', error });
     }
 });
 
